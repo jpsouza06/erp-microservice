@@ -1,22 +1,22 @@
 import { faker } from '@faker-js/faker'
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
-import { Produto, ProdutoProps } from '@/domain/produto/enterprise/entities/produto'
 import Decimal from 'decimal.js'
+import { Product, ProductProps } from '@/enterprise/entities/product'
 
-export function makeProduto(
-	override: Partial<ProdutoProps> = {},
+export function makeProduct(
+	override: Partial<ProductProps> = {},
 	id?: UniqueEntityId,
 ) {
-	const produto = Produto.create({
-    categoria: faker.lorem.word(),
-		descricao: faker.lorem.paragraphs(),
-    estoque: faker.number.int(),
-    nome: faker.lorem.word(),
-    preco: new Decimal(faker.number.float()),
+	const product = Product.create({
+		name: faker.lorem.word(),
+		description: faker.lorem.paragraphs(),
+		ean: faker.string.numeric(),
+		stock: faker.number.int(),
+    price: new Decimal(faker.number.float()),
 		...override
 	},
 	id,
 	)
 
-	return produto
+	return product
 }

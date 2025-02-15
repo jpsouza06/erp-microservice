@@ -1,10 +1,10 @@
-import { Body, Controller, HttpCode, Post, BadRequestException } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiBody, ApiCreatedResponse, ApiResponse } from '@nestjs/swagger';
-import { z } from 'zod';
-import { schemaCreateResponseBadRequest } from '../docs/swagger-product';
-import { CreateProductUseCase } from 'src/application/use-cases/create-product';
-import { Product } from 'src/enterprise/entities/product';
-import { ZodValidationPipe } from '../pipes/zod-validation-pipe';
+import { Body, Controller, HttpCode, Post, BadRequestException } from '@nestjs/common'
+import { ApiTags, ApiOperation, ApiBody, ApiCreatedResponse, ApiResponse } from '@nestjs/swagger'
+import { z } from 'zod'
+import { schemaCreateResponseBadRequest } from '../docs/swagger-product'
+import { CreateProductUseCase } from 'src/application/use-cases/create-product'
+import { Product } from 'src/enterprise/entities/product'
+import { ZodValidationPipe } from '../pipes/zod-validation-pipe'
 
 
 const createProductBodySchema = z.object({
@@ -13,9 +13,9 @@ const createProductBodySchema = z.object({
   description: z.string(),
   price: z.string(),
   stock: z.number(),
-});
+})
 
-type CreateProductBodySchema = z.infer<typeof createProductBodySchema>;
+type CreateProductBodySchema = z.infer<typeof createProductBodySchema>
 
 @Controller('/products')
 @ApiTags('Products')
@@ -29,11 +29,11 @@ export class CreateProductController {
   @ApiCreatedResponse({ description: 'Product created', type: Product })
   @ApiResponse(schemaCreateResponseBadRequest)
   async handle(@Body(new ZodValidationPipe(createProductBodySchema)) body: CreateProductBodySchema) {
-    const { ean, name, description, price, stock } = body;
-    const result = await this.createProductUseCase.execute({ ean, name, description, price, stock });
+    const { ean, name, description, price, stock } = body
+    const result = await this.createProductUseCase.execute({ ean, name, description, price, stock })
     if (result.isLeft()) {
-      throw new BadRequestException(result.value.message);
+      throw new BadRequestException(result.value.message)
     }
-    return result.value;
+    return result.value
   }
 }

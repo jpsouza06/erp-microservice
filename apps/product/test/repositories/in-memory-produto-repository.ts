@@ -1,5 +1,5 @@
-import { ProductRepository } from "apps/product/src/application/repositories/produto-repository";
-import { Product } from "apps/product/src/enterprise/entities/product";
+import { ProductRepository } from "@/application/repositories/produto-repository";
+import { Product } from "@/enterprise/entities/product";
 
 
 export class InMemoryProductRepository implements ProductRepository {

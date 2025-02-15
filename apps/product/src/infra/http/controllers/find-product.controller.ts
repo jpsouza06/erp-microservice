@@ -1,9 +1,9 @@
 // infra/http/controllers/find-product.controller.ts
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common'
 
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { FindProductUseCase } from 'src/application/use-cases/find-produtos';
-import { Product } from 'src/enterprise/entities/product';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger'
+import { FindProductUseCase } from 'src/application/use-cases/find-produtos'
+import { Product } from 'src/enterprise/entities/product'
 
 
 @Controller('/products')
@@ -15,7 +15,7 @@ export class FindProductController {
   @ApiOperation({ summary: 'Find Products' })
   @ApiResponse({ status: 200, description: 'Find products', type: [Product] })
   async handle(@Query() query: any) {
-    const products = await this.findProductUseCase.execute(query);
-    return products;
+    const products = await this.findProductUseCase.execute(query)
+    return products
   }
 }

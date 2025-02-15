@@ -1,20 +1,18 @@
-// tests/unit/find-product.use-case.spec.ts
-
-import { InMemoryProductRepository } from "apps/product/test/repositories/in-memory-produto-repository";
-import { CreateProductUseCase } from "./create-product";
-import { FindProductUseCase } from "./find-produtos";
+import { InMemoryProductRepository } from "test/repositories/in-memory-produto-repository"
+import { CreateProductUseCase } from "./create-product"
+import { FindProductUseCase } from "./find-produtos"
 
 
 describe('FindProductUseCase', () => {
-  let inMemoryRepo: InMemoryProductRepository;
-  let createProductUseCase: CreateProductUseCase;
-  let findProductUseCase: FindProductUseCase;
+  let inMemoryRepo: InMemoryProductRepository
+  let createProductUseCase: CreateProductUseCase
+  let findProductUseCase: FindProductUseCase
 
   beforeEach(() => {
-    inMemoryRepo = new InMemoryProductRepository();
-    createProductUseCase = new CreateProductUseCase(inMemoryRepo);
-    findProductUseCase = new FindProductUseCase(inMemoryRepo);
-  });
+    inMemoryRepo = new InMemoryProductRepository()
+    createProductUseCase = new CreateProductUseCase(inMemoryRepo)
+    findProductUseCase = new FindProductUseCase(inMemoryRepo)
+  })
 
   it('should find all products', async () => {
     const product1 = {
@@ -23,7 +21,7 @@ describe('FindProductUseCase', () => {
       description: 'Description 1',
       price: '49.99',
       stock: 100,
-    };
+    }
 
     const product2 = {
       ean: '9876543210987',
@@ -31,12 +29,12 @@ describe('FindProductUseCase', () => {
       description: 'Description 2',
       price: '29.99',
       stock: 50,
-    };
+    }
 
-    await createProductUseCase.execute(product1);
-    await createProductUseCase.execute(product2);
+    await createProductUseCase.execute(product1)
+    await createProductUseCase.execute(product2)
 
-    const products = await findProductUseCase.execute();
-    expect(products.length).toBe(2);
-  });
-});
+    const products = await findProductUseCase.execute()
+    expect(products.length).toBe(2)
+  })
+})

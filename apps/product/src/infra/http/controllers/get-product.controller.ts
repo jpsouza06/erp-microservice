@@ -1,9 +1,9 @@
 // infra/http/controllers/get-product.controller.ts
-import { Controller, Get, Param, NotFoundException } from '@nestjs/common';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { GetProductUseCase } from 'src/application/use-cases/get-product';
-import { Product } from 'src/enterprise/entities/product';
-import { schemaGetResponseNotFound } from '../docs/swagger-product';
+import { Controller, Get, Param, NotFoundException } from '@nestjs/common'
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger'
+import { GetProductUseCase } from 'src/application/use-cases/get-product'
+import { Product } from 'src/enterprise/entities/product'
+import { schemaGetResponseNotFound } from '../docs/swagger-product'
 
 
 @Controller('/products')
@@ -16,10 +16,10 @@ export class GetProductController {
   @ApiResponse({ status: 200, description: 'Product found', type: Product })
   @ApiResponse(schemaGetResponseNotFound)
   async handle(@Param('id') id: string) {
-    const result = await this.getProductUseCase.execute({ id });
+    const result = await this.getProductUseCase.execute({ id })
     if (result.isLeft()) {
-      throw new NotFoundException(result.value.message);
+      throw new NotFoundException(result.value.message)
     }
-    return result.value;
+    return result.value
   }
 }

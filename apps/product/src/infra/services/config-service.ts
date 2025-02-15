@@ -1,20 +1,20 @@
-import { Injectable } from '@nestjs/common';
-import { envSchema, Env } from '../env';
+import { Injectable } from '@nestjs/common'
+import { envSchema, Env } from '../env'
 
 @Injectable()
 export class CustomConfigService {
-  private readonly env: Env;
+  private readonly env: Env
 
   constructor() {
-    const parsed = envSchema.safeParse(process.env);
+    const parsed = envSchema.safeParse(process.env)
     if (!parsed.success) {
-      console.error('Erro na validação das variáveis de ambiente:', parsed.error.flatten());
-      throw new Error('Configuração inválida das variáveis de ambiente');
+      console.error('Erro na validação das variáveis de ambiente:', parsed.error.flatten())
+      throw new Error('Configuração inválida das variáveis de ambiente')
     }
-    this.env = parsed.data;
+    this.env = parsed.data
   }
 
   get<K extends keyof Env>(key: K): Env[K] {
-    return this.env[key];
+    return this.env[key]
   }
 }

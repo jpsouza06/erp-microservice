@@ -1,16 +1,14 @@
-// tests/unit/create-product.use-case.spec.ts
-
-import { InMemoryProductRepository } from "apps/product/test/repositories/in-memory-produto-repository";
-import { CreateProductUseCase } from "./create-product";
+import { InMemoryProductRepository } from "test/repositories/in-memory-produto-repository"
+import { CreateProductUseCase } from "./create-product"
 
 describe('CreateProductUseCase', () => {
-  let inMemoryRepo: InMemoryProductRepository;
-  let createProductUseCase: CreateProductUseCase;
+  let inMemoryRepo: InMemoryProductRepository
+  let createProductUseCase: CreateProductUseCase
 
   beforeEach(() => {
-    inMemoryRepo = new InMemoryProductRepository();
-    createProductUseCase = new CreateProductUseCase(inMemoryRepo);
-  });
+    inMemoryRepo = new InMemoryProductRepository()
+    createProductUseCase = new CreateProductUseCase(inMemoryRepo)
+  })
 
   it('should create a product successfully', async () => {
     const request = {
@@ -19,14 +17,14 @@ describe('CreateProductUseCase', () => {
       description: 'Test Description',
       price: '49.99',
       stock: 100,
-    };
-
-    const result = await createProductUseCase.execute(request);
-    expect(result.isRight()).toBe(true);
-    if (result.isRight()) {
-      const { product } = result.value;
-      expect(product).toBeDefined();
-      expect(product.name).toEqual('Test Product');
     }
-  });
-});
+
+    const result = await createProductUseCase.execute(request)
+    expect(result.isRight()).toBe(true)
+    if (result.isRight()) {
+      const { product } = result.value
+      expect(product).toBeDefined()
+      expect(product.name).toEqual('Test Product')
+    }
+  })
+})

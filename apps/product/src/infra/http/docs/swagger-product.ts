@@ -1,10 +1,9 @@
-// infra/http/docs/swagger-product.ts
-import { ApiResponseOptions } from '@nestjs/swagger';
+import { ApiResponseOptions } from '@nestjs/swagger'
 
 export const schemaCreateResponseCreated: ApiResponseOptions = {
   status: 201,
   description: 'Product created successfully',
-};
+}
 
 export const schemaCreateResponseBadRequest: ApiResponseOptions = {
   status: 400,
@@ -14,7 +13,7 @@ export const schemaCreateResponseBadRequest: ApiResponseOptions = {
     error: 'Bad Request',
     statusCode: 400,
   },
-};
+}
 
 export const schemaGetResponseNotFound: ApiResponseOptions = {
   status: 404,
@@ -24,7 +23,7 @@ export const schemaGetResponseNotFound: ApiResponseOptions = {
     error: 'Not Found',
     statusCode: 404,
   },
-};
+}
 
 export const schemaUpdateResponseNotFound: ApiResponseOptions = {
   status: 404,
@@ -34,7 +33,7 @@ export const schemaUpdateResponseNotFound: ApiResponseOptions = {
     error: 'Not Found',
     statusCode: 404,
   },
-};
+}
 
 export const schemaUpdateResponseBadRequest: ApiResponseOptions = {
   status: 400,
@@ -44,4 +43,4 @@ export const schemaUpdateResponseBadRequest: ApiResponseOptions = {
     error: 'Bad Request',
     statusCode: 400,
   },
-};
+}

@@ -1,4 +1,4 @@
-import { Product } from "../../enterprise/entities/product";
+import { Product } from "../../enterprise/entities/product"
 
 export abstract class ProductRepository {
   abstract create(product: Product): Promise<void>

@@ -1,11 +1,10 @@
-// infra/http/controllers/create-product.controller.ts
 import { Body, Controller, HttpCode, Post, BadRequestException } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiBody, ApiCreatedResponse, ApiResponse } from '@nestjs/swagger';
-import { CreateProductUseCase } from 'apps/product/src/application/use-cases/create-product';
-import { Product } from 'apps/product/src/enterprise/entities/product';
-import { ZodValidationPipe } from 'utils/pipes/zod-validation-pipe';
 import { z } from 'zod';
 import { schemaCreateResponseBadRequest } from '../docs/swagger-product';
+import { CreateProductUseCase } from 'src/application/use-cases/create-product';
+import { Product } from 'src/enterprise/entities/product';
+import { ZodValidationPipe } from '../pipes/zod-validation-pipe';
 
 
 const createProductBodySchema = z.object({

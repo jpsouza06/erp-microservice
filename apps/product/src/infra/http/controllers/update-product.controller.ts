@@ -2,9 +2,9 @@
 import { Body, Controller, NotFoundException, Param, Put } from '@nestjs/common';
 import { z } from 'zod';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { UpdateProductUseCase } from 'apps/product/src/application/use-cases/update-product';
-import { Product } from 'apps/product/src/enterprise/entities/product';
-import { ZodValidationPipe } from 'utils/pipes/zod-validation-pipe';
+import { UpdateProductUseCase } from 'src/application/use-cases/update-product';
+import { Product } from 'src/enterprise/entities/product';
+import { ZodValidationPipe } from '../pipes/zod-validation-pipe';
 import { schemaUpdateResponseBadRequest, schemaUpdateResponseNotFound } from '../docs/swagger-product';
 
 const updateProductBodySchema = z.object({

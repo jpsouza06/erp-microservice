@@ -2,8 +2,8 @@
 import { Controller, Get, Query } from '@nestjs/common';
 
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { FindProductUseCase } from 'apps/product/src/application/use-cases/find-produtos';
-import { Product } from 'apps/product/src/enterprise/entities/product';
+import { FindProductUseCase } from 'src/application/use-cases/find-produtos';
+import { Product } from 'src/enterprise/entities/product';
 
 
 @Controller('/products')

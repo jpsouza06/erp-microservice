@@ -1,8 +1,8 @@
 // domain/product/enterprise/entities/product.ts
 
 import { ApiProperty } from '@nestjs/swagger';
-import { Entity } from 'apps/core/entities/entity';
-import { UniqueEntityId } from 'apps/core/entities/unique-entity-id';
+import { Entity } from 'src/core/entities/entity';
+import { UniqueEntityId } from 'src/core/entities/unique-entity-id';
 import Decimal from 'decimal.js';
 
 export interface ProductProps {

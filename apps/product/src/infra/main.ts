@@ -1,23 +1,23 @@
 import { NestFactory } from "@nestjs/core"
 import { ProductModule } from "./product.module"
-import { Env } from "./env"
-import { ConfigService } from "@nestjs/config"
-import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger"
+import { MicroserviceOptions, Transport } from "@nestjs/microservices"
+import { CustomConfigService } from "./services/config-service"
 
 async function bootstrap() {
-  const app = await NestFactory.create(ProductModule)
+  const configService = new CustomConfigService()
 
-  const configService = app.get<ConfigService<Env, true>>(ConfigService)
-  const port = configService.get("PORT", { infer: true })
+  const port = configService.get('PORT')
 
-  const config = new DocumentBuilder()
-    .setTitle("Products")
-    .addBearerAuth()
-    .setVersion("1.0")
-    .build()
-  const documentFactory = () => SwaggerModule.createDocument(app, config)
-  SwaggerModule.setup("swagger", app, documentFactory)
+  const app = await NestFactory.createMicroservice<MicroserviceOptions>(
+    ProductModule,
+    {
+      transport: Transport.TCP,
+      options: {
+        port,
+      }
+    },
+  )
 
-  await app.listen(port)
+  await app.listen()
 }
 bootstrap()

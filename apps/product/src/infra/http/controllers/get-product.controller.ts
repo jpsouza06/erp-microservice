@@ -1,8 +1,8 @@
 // infra/http/controllers/get-product.controller.ts
 import { Controller, Get, Param, NotFoundException } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { GetProductUseCase } from 'apps/product/src/application/use-cases/get-product';
-import { Product } from 'apps/product/src/enterprise/entities/product';
+import { GetProductUseCase } from 'src/application/use-cases/get-product';
+import { Product } from 'src/enterprise/entities/product';
 import { schemaGetResponseNotFound } from '../docs/swagger-product';
 
 

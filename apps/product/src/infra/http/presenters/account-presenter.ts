@@ -1,4 +1,4 @@
-import { Product } from "apps/product/src/enterprise/entities/product"
+import { Product } from "@/enterprise/entities/product";
 
 export class ProdutoPresenter {
 	static toHttp(product: Product) {

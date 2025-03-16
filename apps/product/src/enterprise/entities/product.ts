@@ -16,7 +16,7 @@ export interface ProductProps {
 }
 
 export class Product extends Entity<ProductProps> {
-  @ApiProperty({ example: '1234567890123', description: 'Código EAN do produto' })
+  @ApiProperty({ example: '1234567890123', description: 'Código EAN do product' })
   get ean(): string {
     return this.props.ean
   }
@@ -26,7 +26,7 @@ export class Product extends Entity<ProductProps> {
     this.touch()
   }
 
-  @ApiProperty({ example: 'Produto A', description: 'Nome do produto' })
+  @ApiProperty({ example: 'Product A', description: 'Nome do product' })
   get name(): string {
     return this.props.name
   }
@@ -36,7 +36,7 @@ export class Product extends Entity<ProductProps> {
     this.touch()
   }
 
-  @ApiProperty({ example: 'Descrição do produto A', description: 'Descrição do produto' })
+  @ApiProperty({ example: 'Descrição do product A', description: 'Descrição do product' })
   get description(): string {
     return this.props.description
   }
@@ -46,7 +46,7 @@ export class Product extends Entity<ProductProps> {
     this.touch()
   }
 
-  @ApiProperty({ example: '100.50', description: 'Preço do produto', type: String })
+  @ApiProperty({ example: '100.50', description: 'Preço do product', type: String })
   get price(): Decimal {
     return this.props.price
   }
@@ -56,7 +56,7 @@ export class Product extends Entity<ProductProps> {
     this.touch()
   }
 
-  @ApiProperty({ example: 10, description: 'Estoque do produto' })
+  @ApiProperty({ example: 10, description: 'Estoque do product' })
   get stock(): number {
     return this.props.stock
   }

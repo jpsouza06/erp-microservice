@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common'
 import { Either, left, right } from '@/core/either'
-import { ProductRepository } from '../repositories/produto-repository'
+
 import { ResourceNotFoundError } from '@/core/erros/errors/resource-not-found-error'
 import { Product } from '../../enterprise/entities/product'
+import { ProductRepository } from '../repositories/product-repository'
 
 interface GetProductUseCaseRequest {
   id: string

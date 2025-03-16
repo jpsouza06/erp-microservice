@@ -1,6 +1,6 @@
 import { Product } from "@/enterprise/entities/product";
 
-export class ProdutoPresenter {
+export class ProductPresenter {
 	static toHttp(product: Product) {
 		return {
 			id: product.id.toString(),

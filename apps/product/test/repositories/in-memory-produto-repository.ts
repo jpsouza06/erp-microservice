@@ -1,4 +1,4 @@
-import { ProductRepository } from "@/application/repositories/produto-repository";
+import { ProductRepository } from "@/application/repositories/product-repository";
 import { Product } from "@/enterprise/entities/product";
 
 

@@ -1,4 +1,4 @@
-import { InMemoryProductRepository } from "test/repositories/in-memory-produto-repository"
+import { InMemoryProductRepository } from "test/repositories/in-memory-product-repository"
 import { CreateProductUseCase } from "./create-product"
 import { GetProductUseCase } from "./get-product"
 import { UpdateProductUseCase } from "./update-product"

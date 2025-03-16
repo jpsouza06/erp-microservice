@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common'
-import { ProductRepository } from '../repositories/produto-repository'
+
 import { Product } from '../../enterprise/entities/product'
+import { ProductRepository } from '../repositories/product-repository'
 
 @Injectable()
 export class FindProductUseCase {

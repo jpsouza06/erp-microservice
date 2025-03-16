@@ -1,4 +1,4 @@
-import { InMemoryProductRepository } from "test/repositories/in-memory-produto-repository"
+import { InMemoryProductRepository } from "test/repositories/in-memory-product-repository"
 import { CreateProductUseCase } from "./create-product"
 import { GetProductUseCase } from "./get-product"
 import { ResourceNotFoundError } from "@/core/erros/errors/resource-not-found-error"

@@ -1,8 +1,7 @@
-// infra/http/controllers/find-product.controller.ts
+import { FindProductUseCase } from '@/application/use-cases/find-product'
 import { Controller, Get, Query } from '@nestjs/common'
 
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger'
-import { FindProductUseCase } from 'src/application/use-cases/find-produtos'
 import { Product } from 'src/enterprise/entities/product'
 
 

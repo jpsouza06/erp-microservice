@@ -1,4 +1,4 @@
-import { Encrypter } from '@/domain/produto/application/cryptography/encrypter'
+import { Encrypter } from '@/application/cryptography/encrypter'
 import { Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 

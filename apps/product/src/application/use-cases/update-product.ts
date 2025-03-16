@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common'
 import { Either, left, right } from '@/core/either'
 import Decimal from 'decimal.js'
-import { ProductRepository } from '../repositories/produto-repository'
 import { Product } from '../../enterprise/entities/product'
+import { ProductRepository } from '../repositories/product-repository'
 
 interface UpdateProductUseCaseRequest {
   id: string

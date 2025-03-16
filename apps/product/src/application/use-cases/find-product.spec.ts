@@ -1,6 +1,6 @@
-import { InMemoryProductRepository } from "test/repositories/in-memory-produto-repository"
+import { InMemoryProductRepository } from "test/repositories/in-memory-product-repository"
 import { CreateProductUseCase } from "./create-product"
-import { FindProductUseCase } from "./find-produtos"
+import { FindProductUseCase } from "./find-products"
 
 
 describe('FindProductUseCase', () => {

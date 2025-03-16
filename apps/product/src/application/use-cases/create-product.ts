@@ -3,7 +3,7 @@ import { Either, right } from '@/core/either'
 
 import Decimal from 'decimal.js'
 import { Product } from '../../enterprise/entities/product'
-import { ProductRepository } from '../repositories/produto-repository'
+import { ProductRepository } from '../repositories/product-repository'
 
 interface CreateProductUseCaseRequest {
   ean: string
